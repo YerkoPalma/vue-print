@@ -1,6 +1,6 @@
 var VuePrint = require('./vPrint.vue')
 
-exports.install = function (Vue) {
+function install(Vue) {
   Vue.component('v-print', VuePrint)
 
   Vue.directive('print-only', {
@@ -31,3 +31,9 @@ exports.install = function (Vue) {
     }
   })
 }
+
+if (window.Vue) {
+    Vue.use(install);
+}
+
+module.exports = install;
