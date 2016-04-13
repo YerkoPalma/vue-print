@@ -6,7 +6,7 @@
 
 ``` bash
 # install dependencies
-npm install
+npm install vue-print
 
 # serve with hot reload at localhost:8080
 npm run dev
@@ -20,5 +20,3 @@ npm run lint
 # run unit tests
 npm test
 ```
-
-For more information see the [docs for vueify](https://github.com/vuejs/vueify).
