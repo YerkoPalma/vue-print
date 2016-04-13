@@ -2,11 +2,12 @@
   "name": "vue-print",
   "description": "Vue plugin to easy print in the web",
   "author": "YerkoPalma <yerko.palma@usach.cl>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "src/vueprint.js",
   "files": [
     "dist/**",
-    "README.md"],
+    "README.md"
+  ],
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/vueprint.js -o dist/vueprint.js",
     "serve": "http-server -c 1 -a localhost",
