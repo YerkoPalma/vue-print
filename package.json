@@ -8,10 +8,10 @@
     "dist/**",
     "README.md"],
   "scripts": {
-    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
+    "watchify": "watchify -vd -p browserify-hmr -e src/vueprint.js -o dist/vueprint.js",
     "serve": "http-server -c 1 -a localhost",
     "dev": "npm-run-all --parallel watchify serve",
-    "build": "cross-env NODE_ENV=production browserify -e src/main.js | uglifyjs -c warnings=false -m > dist/build.js",
+    "build": "cross-env NODE_ENV=production browserify -e src/vueprint.js | uglifyjs -c warnings=false -m > dist/vueprint.js",
     "lint": "eslint --ext .js,.vue src test/unit",
     "test": "karma start karma.conf.js"
   },
@@ -20,6 +20,13 @@
       "vueify",
       "babelify"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YerkoPalma/vue-print.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YerkoPalma/vue-print/issues"
   },
   "dependencies": {
     "vue": "^1.0.0"
