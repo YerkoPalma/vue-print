@@ -2,7 +2,7 @@
   "name": "vue-print",
   "description": "Vue plugin to easy print in the web",
   "author": "YerkoPalma <yerko.palma@usach.cl>",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "main": "dist/vueprint.js",
   "files": [
     "dist/vueprint.js",
