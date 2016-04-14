@@ -37,6 +37,8 @@
     "url": "https://github.com/YerkoPalma/vue-print/issues"
   },
   "dependencies": {
+    "browserify": "^12.0.1",
+    "browserify-css": "^0.9.1",
     "vue": "^1.0.0"
   },
   "devDependencies": {
@@ -46,8 +48,6 @@
     "babel-preset-stage-2": "^6.0.0",
     "babel-runtime": "^5.8.0",
     "babelify": "^7.2.0",
-    "browserify": "^12.0.1",
-    "browserify-css": "^0.9.1",
     "browserify-hmr": "^0.3.1",
     "cross-env": "^1.0.5",
     "eslint": "^1.10.3",

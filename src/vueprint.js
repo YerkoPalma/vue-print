@@ -1,5 +1,3 @@
-//var VuePrint = require('./vPrint.vue')
-
 function install(Vue) {
   var style = require('./vueprint.css')
   console.log(style)
@@ -56,4 +54,8 @@ if (window && window.Vue) {
     Vue.use(install);
 }
 
-module.exports = install;
+var VuePrint = {
+  install: install
+}
+
+module.exports = VuePrint;
