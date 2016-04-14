@@ -1,6 +1,23 @@
-var VuePrint = require('./vPrint.vue')
+//var VuePrint = require('./vPrint.vue')
 
 function install(Vue) {
+  var style = require('./vueprint.css')
+  console.log(style)
+  
+  var VuePrint = Vue.extend({
+    template: '<template>'
+              + '    <div id=\'printable\' :class=\"{ \'print-only\': !this.visible }\">'
+              + '      <slot></slot>'
+              + '    </div>'
+              + ' </template>',
+    props: {
+    	visible: {
+      	type: Boolean,
+        default: true
+      }
+    }
+  })
+  
   Vue.component('v-print', VuePrint)
 
   Vue.directive('print-only', {
@@ -26,13 +43,16 @@ function install(Vue) {
   Vue.mixin({
     methods: {
       print: function () {
-      	window.print()
+        if (window)
+      	  window.print()
+    	  else
+    	    console.log('Can\'t print outside the browser')
       }
     }
   })
 }
 
-if (window.Vue) {
+if (window && window.Vue) {
     Vue.use(install);
 }
 
