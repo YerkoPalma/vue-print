@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <v-print>
-      <h1>{{ msg }}</h1>
-    </v-print>
+    <h1>{{ msg }}</h1>
   </div>
 </template>
 

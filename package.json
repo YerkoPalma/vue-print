@@ -1,40 +1,12 @@
 {
-  "name": "vue-print",
-  "description": "Vue plugin to easy print in the web",
-  "author": "YerkoPalma <yerko.palma@usach.cl>",
-  "version": "0.2.0",
-  "main": "dist/vueprint.js",
-  "files": [
-    "dist/vueprint.js",
-    "src",
-    "README.md"
-  ],
-  "browserify-css": {
-    "autoInject": true,
-    "minify": true,
-    "rootDir": "."
-  },
+  "name": "vue-print-example",
+  "description": "A Vue.js project",
+  "author": "Yerko Palma <yerko.palma@usach.cl>",
   "scripts": {
-    "watchify": "watchify -vd -p browserify-hmr -e src/vueprint.js -o dist/vueprint.js",
-    "serve": "http-server -c 1 -a localhost",
+    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
+    "serve": "http-server -c 1 -a 0.0.0.0",
     "dev": "npm-run-all --parallel watchify serve",
-    "build": "cross-env NODE_ENV=production browserify -e src/vueprint.js | uglifyjs -c warnings=false -m > dist/vueprint.js",
-    "lint": "eslint --ext .js,.vue src test/unit",
-    "test": "karma start karma.conf.js"
-  },
-  "browserify": {
-    "transform": [
-      "vueify",
-      "babelify",
-      "browserify-css"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YerkoPalma/vue-print.git"
-  },
-  "bugs": {
-    "url": "https://github.com/YerkoPalma/vue-print/issues"
+    "build": "cross-env NODE_ENV=production browserify src/main.js | uglifyjs -c warnings=false -m > dist/build.js"
   },
   "dependencies": {
     "vue": "^1.0.0"
@@ -45,27 +17,22 @@
     "babel-preset-es2015": "^6.0.0",
     "babel-preset-stage-2": "^6.0.0",
     "babel-runtime": "^5.8.0",
+    "cross-env": "^1.0.6",
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
-    "browserify-css": "^0.9.1",
     "browserify-hmr": "^0.3.1",
-    "cross-env": "^1.0.5",
-    "eslint": "^1.10.3",
-    "eslint-plugin-html": "^1.1.0",
     "http-server": "^0.9.0",
-    "jasmine-core": "^2.4.1",
-    "karma": "^0.13.15",
-    "karma-browserify": "^4.4.2",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "karma-spec-reporter": "0.0.23",
     "npm-run-all": "^1.6.0",
-    "phantomjs-prebuilt": "^2.1.3",
-    "proxyquireify": "^3.0.1",
     "uglify-js": "^2.5.0",
     "vue-hot-reload-api": "^1.2.2",
     "vueify": "^8.0.0",
     "vueify-insert-css": "^1.0.0",
     "watchify": "^3.4.0"
+  },
+  "browserify": {
+    "transform": [
+      "vueify",
+      "babelify"
+    ]
   }
 }
